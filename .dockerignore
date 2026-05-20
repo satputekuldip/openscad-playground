@@ -1,0 +1,14 @@
+node_modules
+dist
+libs
+public/libraries
+public/openscad.js
+public/openscad.wasm
+src/wasm
+npm-debug.log
+*.swp
+*.bak
+.git
+.github
+.vscode
+.gemini
