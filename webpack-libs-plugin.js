@@ -201,7 +201,8 @@ class OpenSCADLibrariesPlugin {
         try {
             await fs.unlink(this.srcWasmDir);
         } catch { /* ignore */ }
-        await fs.symlink(path.relative('src', wasmDir), this.srcWasmDir);
+        await this.ensureDir(path.dirname(this.srcWasmDir));
+        await fs.symlink(path.relative(path.dirname(this.srcWasmDir), wasmDir), this.srcWasmDir);
 
         console.log('WASM setup completed');
     }
