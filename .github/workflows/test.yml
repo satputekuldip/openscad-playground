@@ -32,5 +32,6 @@ jobs:
           name: dist-node-${{ matrix.node.name }}
           path: dist
           retention-days: 30
+      - run: npx puppeteer browsers install chrome
       - run: NODE_ENV=development npm run test:e2e
       - run: NODE_ENV=production  npm run test:e2e
